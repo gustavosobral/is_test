@@ -1,10 +1,11 @@
 = form_for @student do |f|
 
+  = render partial: 'shared/error_messages', locals: { resource: @student }
   .form-group
     = f.label :name, 'Nome completo'
     = f.text_field :name, placeholder: 'Nome', class: 'form-control'
   .form-group
-    = f.label :register_number, 'Número de Registro'
+    = f.label :register_number, 'Número de registro'
     = f.text_field :register_number, placeholder: 'Registro', class: 'form-control'
   .form-group.text-center
     = link_to students_path, class: 'btn btn-danger margin-sides-15'
