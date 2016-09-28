@@ -1,0 +1,27 @@
+h1 Cursos
+hr
+
+.panel.panel-default
+  .panel-heading
+  .panel-body
+    .row.text-right
+      .col-md-12
+        = link_to 'Novo Curso', new_course_path, class: 'btn btn-sm btn-success'
+    .table-responsive
+      table.table.table-striped
+        thead
+          tr
+            th #
+            th Nome
+            th Descrição
+            th
+            th
+
+        tbody
+          - @courses.each do |course|
+            tr
+              td = course.id
+              td = course.name
+              td = course.description
+              td = link_to 'Editar', edit_course_path(course), class: 'btn btn-sm btn-warning'
+              td = link_to 'Destruir', course, data: {confirm: 'Você tem certeza?'}, method: :delete, class: 'btn btn-sm btn-danger'

@@ -1,0 +1,13 @@
+= form_for @course do |f|
+
+  = render partial: 'shared/error_messages', locals: {resource: @course}
+  .form-group
+    = f.label :name, 'Nome'
+    = f.text_field :name, placeholder: 'Nome', class: 'form-control'
+  .form-group
+    = f.label :description, 'Descrição'
+    = f.text_field :description, placeholder: 'Descrição', class: 'form-control'
+  .form-group.text-center
+    = link_to courses_path, class: 'btn btn-danger margin-sides-15'
+      | Cancelar
+    = f.submit class: 'btn btn-success margin-sides-15'
