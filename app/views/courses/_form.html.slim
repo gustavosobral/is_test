@@ -7,6 +7,9 @@
   .form-group
     = f.label :description, 'Descrição'
     = f.text_field :description, placeholder: 'Descrição', class: 'form-control'
+  .form-group
+    = f.label :status, 'Estado'
+    = f.collection_select(:status, Status.to_a, :second, :first, {}, { class: 'form-control' })
   .form-group.text-center
     = link_to courses_path, class: 'btn btn-danger margin-sides-15'
       | Cancelar

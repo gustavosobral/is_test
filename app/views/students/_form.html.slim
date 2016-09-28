@@ -7,6 +7,9 @@
   .form-group
     = f.label :register_number, 'Número de registro'
     = f.text_field :register_number, placeholder: 'Registro', class: 'form-control'
+  .form-group
+    = f.label :status, 'Estado'
+    = f.collection_select(:status, Status.to_a, :second, :first, {}, { class: 'form-control' })
   .form-group.text-center
     = link_to students_path, class: 'btn btn-danger margin-sides-15'
       | Cancelar
