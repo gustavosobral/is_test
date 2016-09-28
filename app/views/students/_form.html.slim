@@ -1,0 +1,12 @@
+= form_for @student do |f|
+
+  .form-group
+    = f.label :name, 'Nome completo'
+    = f.text_field :name, placeholder: 'Nome', class: 'form-control'
+  .form-group
+    = f.label :register_number, 'Número de Registro'
+    = f.text_field :register_number, placeholder: 'Registro', class: 'form-control'
+  .form-group.text-center
+    = link_to students_path, class: 'btn btn-danger margin-sides-15'
+      | Cancelar
+    = f.submit class: 'btn btn-success margin-sides-15'

@@ -1,0 +1,27 @@
+h1 Estudantes
+hr
+
+.panel.panel-default
+  .panel-heading
+  .panel-body
+    .row.text-right
+      .col-md-12
+        = link_to 'Novo Estudante', new_student_path, class: 'btn btn-sm btn-success'
+    .table-responsive
+      table.table.table-striped
+        thead
+          tr
+            th #
+            th Nome
+            th Número de Registro
+            th
+            th
+
+        tbody
+          - @students.each do |student|
+            tr
+              td = student.id
+              td = student.name
+              td = student.register_number
+              td = link_to 'Editar', edit_student_path(student), class: 'btn btn-sm btn-warning'
+              td = link_to 'Destruir', student, data: { confirm: 'Você tem certeza?' }, method: :delete, class: 'btn btn-sm btn-danger'
