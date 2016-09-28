@@ -18,6 +18,11 @@ describe Student do
       expect(student.valid?).to be false
     end
 
+    it 'does not accept too long name' do
+      student.name = 'a' * 46
+      expect(student.valid?).to be false
+    end
+
     it 'does not accept too long register_number' do
       student.register_number = 'a' * 46
       expect(student.valid?).to be false
