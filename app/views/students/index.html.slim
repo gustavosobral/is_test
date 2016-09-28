@@ -15,7 +15,6 @@
             th Número de Registro
             th Estado
             th
-            th
 
         tbody
           - @students.each do |student|
@@ -24,5 +23,6 @@
               td = student.name
               td = student.register_number
               td = student.status_humanize
-              td = link_to 'Editar', edit_student_path(student), class: 'btn btn-sm btn-warning'
-              td = link_to 'Excluir', student, data: { confirm: 'Você tem certeza?' }, method: :delete, class: 'btn btn-sm btn-danger'
+              td.td-buttons.text-center
+                = link_to 'Editar', edit_student_path(student), class: 'btn btn-sm btn-warning'
+                = link_to 'Excluir', student, data: { confirm: 'Você tem certeza?' }, method: :delete, class: 'btn btn-sm btn-danger'

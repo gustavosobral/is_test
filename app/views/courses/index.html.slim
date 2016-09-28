@@ -15,7 +15,6 @@
             th Descrição
             th Estado
             th
-            th
 
         tbody
           - @courses.each do |course|
@@ -24,5 +23,6 @@
               td = course.name
               td = course.description
               td = course.status_humanize
-              td = link_to 'Editar', edit_course_path(course), class: 'btn btn-sm btn-warning'
-              td = link_to 'Excluir', course, data: {confirm: 'Você tem certeza?'}, method: :delete, class: 'btn btn-sm btn-danger'
+              td.td-buttons.text-center
+                = link_to 'Editar', edit_course_path(course), class: 'btn btn-sm btn-warning'
+                = link_to 'Excluir', course, data: {confirm: 'Você tem certeza?'}, method: :delete, class: 'btn btn-sm btn-danger'

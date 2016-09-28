@@ -1,1 +1,17 @@
 - provide(:content_title, 'Bem vindo!')
+
+.row.text-center
+  .col-md-4
+    a.anchor-index-card href= students_path
+      .index-card
+        span.glyphicon.glyphicon-th-list aria-hidden="true"
+        h4 Estudantes
+  .col-md-4
+    a.anchor-index-card href= courses_path
+      .index-card
+        span.glyphicon.glyphicon-th-list aria-hidden="true"
+        h4 Cursos
+  .col-md-4
+    .index-card
+      span.glyphicon.glyphicon-th-list aria-hidden="true"
+      h4 Matrícula
