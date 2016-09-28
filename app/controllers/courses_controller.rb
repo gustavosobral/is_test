@@ -21,28 +21,20 @@ class CoursesController < ApplicationController
 
   # POST /courses
   def create
-    @course = Course.new(course_params)
-
-    if @course.save
-      redirect_to courses_path, notice: 'Course was successfully created.'
-    else
-      render :new
-    end
+    @course = Course.create(course_params)
+    respond_with @course
   end
 
   # PATCH/PUT /courses/1
   def update
-    if @course.update(course_params)
-      redirect_to courses_path, notice: 'Course was successfully updated.'
-    else
-      render :edit
-    end
+    @course.update(course_params)
+    respond_with @course
   end
 
   # DELETE /courses/1
   def destroy
     @course.destroy
-    redirect_to courses_url, notice: 'Course was successfully destroyed.'
+    respond_with @course
   end
 
   private

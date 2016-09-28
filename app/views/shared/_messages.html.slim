@@ -1,0 +1,6 @@
+- flash.each do |type, msg|
+  - if msg.is_a?(String)
+    .alert.alert-dismissible class= alert_class(type)
+      button.close aria-label='Close' data-dismiss='alert' type='button'
+        span aria-hidden='true'  &times;
+      = msg.html_safe

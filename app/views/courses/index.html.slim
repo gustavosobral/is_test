@@ -1,5 +1,4 @@
-h1 Cursos
-hr
+- provide(:content_title, 'Cursos')
 
 .panel.panel-default
   .panel-heading
@@ -24,4 +23,4 @@ hr
               td = course.name
               td = course.description
               td = link_to 'Editar', edit_course_path(course), class: 'btn btn-sm btn-warning'
-              td = link_to 'Destruir', course, data: {confirm: 'Você tem certeza?'}, method: :delete, class: 'btn btn-sm btn-danger'
+              td = link_to 'Excluir', course, data: {confirm: 'Você tem certeza?'}, method: :delete, class: 'btn btn-sm btn-danger'

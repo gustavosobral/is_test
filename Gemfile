@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'puma'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'slim-rails'
+gem 'responders'
 
 group :development, :test do
   gem 'byebug'

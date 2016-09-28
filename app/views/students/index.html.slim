@@ -1,5 +1,4 @@
-h1 Estudantes
-hr
+- provide(:content_title, 'Estudantes')
 
 .panel.panel-default
   .panel-heading
@@ -24,4 +23,4 @@ hr
               td = student.name
               td = student.register_number
               td = link_to 'Editar', edit_student_path(student), class: 'btn btn-sm btn-warning'
-              td = link_to 'Destruir', student, data: { confirm: 'Você tem certeza?' }, method: :delete, class: 'btn btn-sm btn-danger'
+              td = link_to 'Excluir', student, data: { confirm: 'Você tem certeza?' }, method: :delete, class: 'btn btn-sm btn-danger'

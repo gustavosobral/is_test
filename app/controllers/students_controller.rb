@@ -21,28 +21,20 @@ class StudentsController < ApplicationController
 
   # POST /students
   def create
-    @student = Student.new(student_params)
-
-    if @student.save
-      redirect_to students_path, notice: 'Student was successfully created.'
-    else
-      render :new
-    end
+    @student = Student.create(student_params)
+    respond_with @student
   end
 
   # PATCH/PUT /students/1
   def update
-    if @student.update(student_params)
-      redirect_to students_path, notice: 'Student was successfully updated.'
-    else
-      render :edit
-    end
+    @student.update(student_params)
+    respond_with @student
   end
 
   # DELETE /students/1
   def destroy
     @student.destroy
-    redirect_to students_url, notice: 'Student was successfully destroyed.'
+    respond_with @student
   end
 
   private

@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title IsTest
+    title iS Teste
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -13,4 +13,7 @@ html
         .col-md-3
           = render 'layouts/sidebar'
         .col-md-9
+          h1 = yield(:content_title)
+          hr
+          = render 'shared/messages'
           = yield
