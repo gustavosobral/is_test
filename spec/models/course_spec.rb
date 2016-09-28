@@ -5,6 +5,10 @@ describe Course do
     it 'be valid' do
       expect(course.valid?).to be true
     end
+
+    it 'default status to be inactive' do
+      expect(course.status).to eq(Status::INACTIVE)
+    end
   end
 
   context 'with invalid data' do
@@ -30,6 +34,12 @@ describe Course do
       course.description = 'a' * 46
       expect(course.valid?).to be false
       expect(course.errors.messages[:description].join).to match('é muito longo (máximo: 45 caracteres)')
+    end
+
+    it 'does not accept invalid status' do
+      course.status = 3
+      expect(course.valid?).to be false
+      expect(course.errors.messages[:status].join).to match('não está incluído na lista')
     end
   end
 end

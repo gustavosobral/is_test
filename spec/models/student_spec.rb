@@ -5,6 +5,10 @@ describe Student do
     it 'be valid' do
       expect(student.valid?).to be true
     end
+
+    it 'default status to be inactive' do
+      expect(student.status).to eq(Status::INACTIVE)
+    end
   end
 
   context 'with invalid data' do
@@ -30,6 +34,12 @@ describe Student do
       student.register_number = 'a' * 46
       expect(student.valid?).to be false
       expect(student.errors.messages[:register_number].join).to match('é muito longo (máximo: 45 caracteres)')
+    end
+
+    it 'does not accept invalid status' do
+      student.status = 4
+      expect(student.valid?).to be false
+      expect(student.errors.messages[:status].join).to match('não está incluído na lista')
     end
   end
 end
