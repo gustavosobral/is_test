@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'puma'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'slim-rails'
 
 group :development, :test do
   gem 'byebug'
