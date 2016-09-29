@@ -2,10 +2,10 @@
 
   = render partial: 'shared/error_messages', locals: {resource: @classroom}
   .form-group
-    = f.label :student, 'Estudante'
+    = f.label :student_id, 'Estudante'
     = f.collection_select(:student_id, Student.all, :id, :name, {}, {class: 'form-control'})
   .form-group
-    = f.label :course, 'Curso'
+    = f.label :course_id, 'Curso'
     = f.collection_select(:course_id, Course.all, :id, :name, {}, {class: 'form-control'})
   .form-group.text-center
     = link_to classrooms_path, class: 'btn btn-danger margin-sides-15'
