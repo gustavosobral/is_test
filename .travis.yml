@@ -6,4 +6,10 @@ cache:
   - bundler
   - apt
 
+services:
+  - postgresql
+
 bundler_args: --without production
+
+before_script:
+  - psql -c 'create database is_test_test;' -U postgres
