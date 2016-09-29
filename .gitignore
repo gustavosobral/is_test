@@ -16,7 +16,6 @@
 !/log/.keep
 /tmp
 
-database.yml
 .env
 
 # Ignore RubyMine files.
