@@ -20,3 +20,6 @@
 
 # Ignore RubyMine files.
 .idea/
+
+# Ignore CodeCov files.
+coverage/
