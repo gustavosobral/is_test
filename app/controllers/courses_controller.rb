@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
 
   # GET /courses
   def index
-    @courses = Course.all
+    @courses = Course.order(:updated_at).all
   end
 
   # GET /courses/1
