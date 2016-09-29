@@ -15,7 +15,7 @@ feature 'I manage Courses CRUD', type: :feature do
     fill_in 'course_description', with: course.description
     submit_form
     expect(current_path).to eq(courses_path)
-    expect(page).to have_content course.name
+    expect(page).to have_content course.name.truncate(20)
 
     # Update
     visit edit_course_path(1)

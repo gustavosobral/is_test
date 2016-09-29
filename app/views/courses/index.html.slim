@@ -21,8 +21,8 @@
           - @courses.each do |course|
             tr
               td = course.id
-              td = course.name
-              td = course.description
+              td = truncate(course.name, length: 20)
+              td = truncate(course.description, length: 20)
               td = course.status_humanize
               td = course.classrooms.size
               td.td-buttons.text-center

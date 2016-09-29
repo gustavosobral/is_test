@@ -15,7 +15,7 @@ feature 'I manage Student CRUD', type: :feature do
     fill_in 'student_register_number', with: student.register_number
     submit_form
     expect(current_path).to eq(students_path)
-    expect(page).to have_content student.name
+    expect(page).to have_content student.name.truncate(20)
 
     # Update
     visit edit_student_path(1)

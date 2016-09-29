@@ -21,8 +21,8 @@
           - @students.each do |student|
             tr
               td = student.id
-              td = student.name
-              td = student.register_number
+              td = truncate(student.name, length: 20)
+              td = truncate(student.register_number, length: 20)
               td = student.status_humanize
               td = student.classrooms.size
               td.td-buttons.text-center

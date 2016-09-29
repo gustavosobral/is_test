@@ -20,8 +20,8 @@
           - @classrooms.each do |classroom|
             tr
               td = classroom.id
-              td = classroom.student.name
-              td = classroom.course.name
+              td = truncate(classroom.student.name, length: 20)
+              td = truncate(classroom.course.name, length: 20)
               td = I18n.l(classroom.updated_at, format: :long)
               td.td-buttons.text-center
                 = link_to 'Editar', edit_classroom_path(classroom), class: 'btn btn-sm btn-warning'
