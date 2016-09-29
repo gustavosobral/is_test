@@ -3,7 +3,7 @@ class ClassroomsController < ApplicationController
 
   # GET /classrooms
   def index
-    @classrooms = Classroom.all
+    @classrooms = Classroom.order(:student_id).all
   end
 
    # GET /classrooms/new
