@@ -1,4 +1,4 @@
-describe Course do
+describe Course, type: :model do
   let(:course) { FactoryGirl.build(:course) }
 
   context 'with valid data' do

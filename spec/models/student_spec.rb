@@ -1,4 +1,4 @@
-describe Student do
+describe Student, type: :model do
   let(:student) { FactoryGirl.build(:student) }
 
   context 'with valid data' do
