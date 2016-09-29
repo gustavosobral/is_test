@@ -1,0 +1,13 @@
+= form_for @classroom do |f|
+
+  = render partial: 'shared/error_messages', locals: {resource: @classroom}
+  .form-group
+    = f.label :student, 'Estudante'
+    = f.collection_select(:student_id, Student.all, :id, :name, {}, {class: 'form-control'})
+  .form-group
+    = f.label :course, 'Curso'
+    = f.collection_select(:course_id, Course.all, :id, :name, {}, {class: 'form-control'})
+  .form-group.text-center
+    = link_to classrooms_path, class: 'btn btn-danger margin-sides-15'
+      | Cancelar
+    = f.submit class: 'btn btn-success margin-sides-15'

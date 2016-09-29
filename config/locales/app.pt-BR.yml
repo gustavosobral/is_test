@@ -7,6 +7,9 @@ pt-BR:
       student:
         one: Estudante
         other: Estudantes
+      classroom:
+        one: Matrícula
+        other: Matrículas
     attributes:
       course:
         name: Nome
