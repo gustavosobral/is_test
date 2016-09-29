@@ -14,6 +14,7 @@
             th Nome
             th Descrição
             th Estado
+            th # Matrículados
             th
 
         tbody
@@ -23,6 +24,7 @@
               td = course.name
               td = course.description
               td = course.status_humanize
+              td = course.classrooms.size
               td.td-buttons.text-center
                 = link_to 'Editar', edit_course_path(course), class: 'btn btn-sm btn-warning'
                 = link_to 'Excluir', course, data: {confirm: 'Você tem certeza?'}, method: :delete, class: 'btn btn-sm btn-danger'
