@@ -17,13 +17,15 @@
 @import 'bootstrap-sprockets';
 @import "bootstrap";
 
+$app-blue: #337ab7;
+
 body {
   padding-top: 70px;
   background-color: rgba(117,117,121,0.04); }
 
 hr {
   height: 1px;
-  background-color: #222; }
+  background-color: #ddd; }
 
 .field_with_errors {
   color: #a94442;
@@ -40,6 +42,22 @@ hr {
   margin-left: 15px;
   margin-right: 15px; }
 
+.navbar {
+  background-color: $app-blue;
+  border-color: $app-blue;
+  .navbar-brand,
+  .navbar-brand:hover {
+    color: #000; }
+}
+
+.side-bar {
+  border-right: 1px solid #ddd;
+  height: 500px; }
+
+.panel-default > .panel-heading {
+  background-color: $app-blue;
+}
+
 .list-group-item {
   .glyphicon { margin-right: 10px; }
 }
@@ -52,9 +70,6 @@ hr {
 }
 
 .index-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  &:hover { background-color: #f5f5f5; }
   .glyphicon {
     margin-top: 10px;
     font-size: 20px;
